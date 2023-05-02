@@ -77,20 +77,39 @@
   // should return the string "ratset gaj".
   // ---------------------
   function reverse(str) {
-    for (let i = str.length; i > 0; i--) {}
+    let rStr = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+      rStr += str[i];
+    }
+    return rStr;
   }
-  console.log("hello".length);
   // ---------------------
   // Define a function findLongestWord() that takes an array of words and returns the length of the longest one.
   // ---------------------
-
+  function findLongestWord(arr) {
+    let maxLength = 0;
+    for (let i in arr) {
+      if (arr[i].length > maxLength) {
+        maxLength = arr[i].length;
+      }
+    }
+    return maxLength;
+  }
   // ---------------------
-  // Define a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
+  // Define a function filterLongWords() that takes an array of words and an integer i and returns the array of
+  // words that are longer than i.
   // ---------------------
-
+  function filterLongWords(arr, i) {
+    return arr.filter((word) => word.length > i);
+  }
   // ---------------------
-  // Define a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
+  // Define a function charFreq() that takes a string and builds a frequency
+  // listing of the characters contained
+  // in it. Represent the frequency listing as a Javascript object.
+  // Try it with something
+  // like charFreq("abbabcbdbabdbdbabababcbcbab").
   // ---------------------
+  function charFreq(str) {}
 
   ////////////////////////////////////////////////////////////////////////
   /////////////////////////DO NOT CHANGE CODE BELOW///////////////////////
