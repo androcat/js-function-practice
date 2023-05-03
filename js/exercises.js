@@ -21,6 +21,7 @@
     if (n1 > n2 && n1 > n3) {
       return n1;
     } else if (n2 > n1 && n2 > n3) {
+      // OR only (n2 > n3)
       return n2;
     } else {
       return n3;
@@ -36,6 +37,9 @@
       return true;
     }
     return false;
+
+    //OR
+    // return "aeiou".includes(l); bc it returns a boolean
   }
 
   // ---------------------
@@ -82,6 +86,8 @@
       rStr += str[i];
     }
     return rStr;
+    // OR
+    // return str.split("").reverse().join("")
   }
   // ---------------------
   // Define a function findLongestWord() that takes an array of words and returns the length of the longest one.
@@ -109,7 +115,21 @@
   // Try it with something
   // like charFreq("abbabcbdbabdbdbabababcbcbab").
   // ---------------------
-  function charFreq(str) {}
+  function charFreq(str) {
+    const freqList = {};
+    const strArr = str.split(""); // not necessary to turn into array, can iter. thru str
+    for (let i in strArr) {
+      if (freqList[strArr[i]]) {
+        // if teh var already exists
+        freqList[strArr[i]] += 1; //add 1 to its count
+      } else {
+        freqList[strArr[i]] = 1; //otherwise create it and count the first one
+      }
+      // Or
+      // freqList[char] = freqList[char] || 1;
+    }
+    return freqList;
+  }
 
   ////////////////////////////////////////////////////////////////////////
   /////////////////////////DO NOT CHANGE CODE BELOW///////////////////////
